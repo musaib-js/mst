@@ -1,0 +1,95 @@
+{% extends 'basic.html' %}
+{% block title %}Blog | Mirchal Sir's Tutorials{% endblock title %}
+{% block body %}
+
+    <!--====== PAGE BANNER PART START ======-->
+    
+    <section id="page-banner" class="pt-105 pb-130 bg_cover" data-overlay="8" style="background-image: url(/static/courses/images2/page-banner-4.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-banner-cont">
+                        <h2>Blog</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                            </ol>
+                        </nav>
+                    </div>  <!-- page banner cont -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== PAGE BANNER PART ENDS ======-->
+   
+    <!--====== BLOG PART START ======-->
+    
+    <section id="blog-page" class="pt-90 pb-120 gray-bg">
+        <div class="container">
+           <div class="row">
+               <div class="col-lg-8">
+                   {% for p in allPosts %}
+                   <div class="singel-blog mt-30">
+                       <div class="blog-thum">
+                           <img src="{{p.image.url}}" alt="Blog">
+                       </div>
+                       <div class="blog-cont">
+                           <a href="/blog/{{p.slug}}"><h3>{{p.title}}</h3></a>
+                           <ul>
+                               <li><a href="#"><i class="fa fa-calendar"></i>{{p.timeStamp}}</a></li>
+                               <li><a href="#"><i class="fa fa-user"></i>{{p.author}}</a></li>
+                           </ul>
+                           <p>{{p.content}}</p>
+                       </div>
+                   </div> <!-- singel blog -->
+                   {% endfor %}
+               </div>
+               <div class="col-lg-4">
+                   <div class="saidbar">
+                       <div class="row">
+                               <div class="categories mt-30">
+                                   <h4>Categories We Talk About</h4>
+                                   <ul>
+                                       <li>Education</li>
+                                       <li>Social Analysis</li>
+                                       <li>Political Analysis</li>
+                                       <li>Career Guidance</li>
+                                       <li>Social Issues</li>
+                                       <li>Portal Updates</li>
+                                   </ul>
+                               </div>
+                           </div> <!-- categories -->
+                           <div class="col-lg-12 col-md-6">
+                               <div class="saidbar-post mt-30">
+                                   <h4>Popular Posts</h4>
+                                   <ul>
+                                       <li>
+                                           {% for p in popularPosts  %}
+                                            <a href="#">
+                                                <div class="singel-post">
+                                                   <div class="thum">
+                                                       <img src="/media/{{p.image}}" alt="Blog">
+                                                   </div>
+                                                   <div class="cont">
+                                                       <h6>{{p.title}}</h6>
+                                                       <span>{{p.timeStamp}}</span>
+                                                   </div>
+                                               </div> <!-- singel post -->
+                                            </a>
+                                            {% endfor %}
+                                       </li>
+                                   </ul>
+                               </div> <!-- saidbar post -->
+                           </div>
+                       </div> <!-- row -->
+                   </div> <!-- saidbar -->
+               </div>
+           </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== BLOG PART ENDS ======-->
+   
+    {% endblock body %}

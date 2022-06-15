@@ -1,0 +1,207 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %}{{request.user}}{% endblock title %}
+{% block body %}
+ <!--====== PAGE BANNER PART START ======-->
+    <section id="page-banner" class="pt-105 pb-130 bg_cover" data-overlay="8" style="background-image: url(images/page-banner-3.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-banner-cont">
+                        <h2>Your Profile</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Teachers</li>
+                            </ol>
+                        </nav>
+                    </div> <!-- page banner cont -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    <!--====== PAGE BANNER PART ENDS ======-->
+
+    <!--====== TEACHERS PART START ======-->
+    
+    <section id="teachers-singel" class="pt-70 pb-120 gray-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-8">
+                    <div class="teachers-left mt-50">
+                        <div class="name">
+                            <h6>Name: {{request.user.get_full_name}}</h6>
+                            <span>Email: {{request.user.email}}</span>
+                        </div>
+                        <div class="description">
+                            <p>Hello {{request.user}}! We hope you are doing good and learning well. If you face any issues in using the platform, feel free to chat with us to contact us in the either in the <a href  = "/contact"> contact form</a> or the mail us on support@mirchalsirstutorials.com</p>
+                        </div>
+                    </div> <!-- teachers left -->
+                </div>
+                <div class="col-lg-8">
+                    <div class="teachers-right mt-50">
+                        <ul class="nav nav-justified" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="active" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="true">Pages You Can Scroll</a>
+                            </li>
+                            
+                        </ul> <!-- nav -->
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                                <div class="dashboard-cont">
+                                    <div class="singel-dashboard pt-40">
+                                        <h5><a href= "/">Home</a></h5>
+                                        <p>Click the above link to go to the homepage of the platform, where you'd get to know a lot of things about the platform.</p>
+                                    </div> <!-- singel dashboard -->
+                                    <div class="singel-dashboard pt-40">
+                                        <h5><a href= "/allcourses">Courses</a></h5>
+                                        <p>Click the above link to go through the courses available on the platform and choose the best for you</p>
+                                    </div> <!-- singel dashboard -->
+                                    <div class="singel-dashboard pt-40">
+                                        <h5><a href= "/teachers">Teachers</a></h5>
+                                        <p>Click the above link to know about your mentors.</p>
+                                    </div> <!-- singel dashboard -->
+                                </div> <!-- dashboard cont -->
+                            </div>
+                           </div> <!-- courses cont -->
+                            </div>
+                            <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                                <div class="reviews-cont">
+                                    <div class="title">
+                                        <h6>Student Reviews</h6>
+                                    </div>
+                                    <ul>
+                                       <li>
+                                           <div class="singel-reviews">
+                                                <div class="reviews-author">
+                                                    <div class="author-thum">
+                                                        <img src="images/review/r-1.jpg" alt="Reviews">
+                                                    </div>
+                                                    <div class="author-name">
+                                                        <h6>Bobby Aktar</h6>
+                                                        <span>April 03, 2019</span>
+                                                    </div>
+                                                </div>
+                                                <div class="reviews-description pt-20">
+                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which.</p>
+                                                    <div class="rating">
+                                                        <ul>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                        </ul>
+                                                        <span>/ 5 Star</span>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- singel reviews -->
+                                       </li>
+                                       <li>
+                                           <div class="singel-reviews">
+                                                <div class="reviews-author">
+                                                    <div class="author-thum">
+                                                        <img src="images/review/r-2.jpg" alt="Reviews">
+                                                    </div>
+                                                    <div class="author-name">
+                                                        <h6>Humayun Ahmed</h6>
+                                                        <span>April 13, 2019</span>
+                                                    </div>
+                                                </div>
+                                                <div class="reviews-description pt-20">
+                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which.</p>
+                                                    <div class="rating">
+                                                        <ul>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                        </ul>
+                                                        <span>/ 5 Star</span>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- singel reviews -->
+                                       </li>
+                                       <li>
+                                           <div class="singel-reviews">
+                                                <div class="reviews-author">
+                                                    <div class="author-thum">
+                                                        <img src="images/review/r-3.jpg" alt="Reviews">
+                                                    </div>
+                                                    <div class="author-name">
+                                                        <h6>Tania Aktar</h6>
+                                                        <span>April 20, 2019</span>
+                                                    </div>
+                                                </div>
+                                                <div class="reviews-description pt-20">
+                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which.</p>
+                                                    <div class="rating">
+                                                        <ul>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                        </ul>
+                                                        <span>/ 5 Star</span>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- singel reviews -->
+                                       </li>
+                                    </ul>
+                                    <div class="title pt-15">
+                                        <h6>Leave A Comment</h6>
+                                    </div>
+                                    <div class="reviews-form">
+                                        <form action="#">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-singel">
+                                                            <input type="text" placeholder="Fast name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-singel">
+                                                            <input type="text" placeholder="Last Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-singel">
+                                                            <div class="rate-wrapper">
+                                                                <div class="rate-label">Your Rating:</div>
+                                                                <div class="rate">
+                                                                    <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
+                                                                    <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
+                                                                    <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
+                                                                    <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
+                                                                    <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-singel">
+                                                            <textarea placeholder="Comment"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-singel">
+                                                            <button type="button" class="main-btn">Post Comment</button>
+                                                        </div>
+                                                    </div>
+                                                </div> <!-- row -->
+                                            </form>
+                                    </div>
+                                </div> <!-- reviews cont -->
+                            </div>
+                        </div> <!-- tab content -->
+                    </div> <!-- teachers right -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+
+    <!--====== EVENTS PART ENDS ======-->
+
+    {% endblock body %}

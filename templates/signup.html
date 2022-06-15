@@ -1,0 +1,79 @@
+<!--Developed by Musaib Altaf-->
+{% extends 'basic.html' %}
+{% load course_custom_tags %}
+{%block title%}
+Signup | Mirchal Sir's Tutorials
+{% endblock %}
+
+{%block body%}
+    <!--====== REGISTER PART START ======-->
+
+    <section id="contact-page" class="pt-90 pb-120 gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="contact-from">
+                        <div class="section-title">
+                            <h5>Hi, Student!</h5>
+                            <h2>Register Here</h2>
+                            <ul class="errorlist nonfield" style  = "color: red;">{{form.errors}}<li></li></ul>
+                        </div> <!-- section title -->
+                        <div class="main-form pt-45">
+                            <form role="form" class="contact-form" action="/signup" method="POST">{% csrf_token %}
+                                    <ul class="errorlist nonfield" style  = "color: red;"><li></li></ul>
+                                    <div class="row">
+                                        {% for field in form %}
+                                        <div class="col-md-6">
+                                            <div class="singel-form form-group">
+                                            <label>{{field.label}}</label>
+                                            <input id="{{ field.id_for_label }}" name="{{ field.html_name }}"/> 
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="singel-form">
+                                            <button type="submit" class="main-btn">Login</button>
+                                        </div> <!-- singel form -->
+                                    </div>
+                             </form>
+                        </div> <!-- main form -->
+                    </div> <!--  login from -->
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact-address">
+                        <div class="contact-heading">
+                            <h5>Have Issues Logging In?</h5>
+                            <p>If you face any issues while logging in, please don’t hesitate to contact us.</p>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="singel-address">
+                                    <div class="icon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <div class="cont">
+                                        <p>+91 91494 68735</p>
+                                        <p>+91 91494 68735</p>
+                                    </div>
+                                </div> <!-- singel address -->
+                            </li>
+                            <li>
+                                <div class="singel-address">
+                                    <div class="icon">
+                                        <i class="fa fa-envelope-o"></i>
+                                    </div>
+                                    <div class="cont">
+                                        <p>info@mirchalsirstutorials.com</p>
+                                        <p>query@mirchalsirstutorials.com</p>
+                                    </div>
+                                </div> <!-- singel address -->
+                            </li>
+                        </ul>
+                    </div> <!-- contact address -->
+                
+                </div>
+            </div>
+        </div>
+
+{%endblock%}

@@ -1,0 +1,54 @@
+{% extends "basic.html" %} 
+{% load static %} 
+{% block title %} {{assignment.unique_name}} {% endblock title %} 
+{% block js %}
+{% comment %} <script>
+    $(document).ready(function(){
+        var myButton = $('#submitbutton');
+        myButton.on('click', function(){
+            myButton.prop('disabled', true);
+        });
+    });
+</script> {% endcomment %}
+{% endblock js %}
+
+
+{% block body %}
+<section id="contact-page" class="pt-90 pb-120 gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="contact-from">
+                    <div class="section-title">
+                        <h5>Hi</a>, {{request.user}}</h5>
+                        <h2>{{assignment.unique_name}}</h2>
+                        <h4 class="my-4" style="color: #ffc600;">Topic: {{assignment.topic}}</h4>
+                        <div class="container">
+                            <h2>{{assignment.questions|linebreaks}}</h2>
+                        </div>
+                    </div>
+                    <!-- section title -->
+                </div>
+                <!--  login from -->
+            </div>
+            <div class="col-lg-4">
+                <div class="contact-address">
+                    <div class="contact-heading">
+                        <h5>Submit Your Responses Here</h5>
+                        <p>If you face any issues while submitting, please don’t hesitate to contact us.</p>
+                    </div>
+                    <div class="main-form pt-45">
+                        <form action="/assignments/{{assignment.unique_name}}/" method="POST">
+                        {% csrf_token %}
+                        {{ form }}
+                        <button id = "submitbutton" class = "main-btn mx-2" type="submit" value="Submit">Submit </button>
+                        </form>
+                    </div>
+                </div>
+                <!-- contact address -->
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock body %}

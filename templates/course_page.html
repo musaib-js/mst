@@ -1,0 +1,111 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% load course_custom_tags %}
+
+{%block title%}
+{{course.name}} | Mirchal Sir's Tutorials
+{% endblock %}
+
+{% block js %}
+<script src="/static/courses/js/course_page.js"></script>
+{% endblock %}
+{%block body%}
+<style>
+    .no-preview{
+        cursor: not-allowed;
+    }   
+    a:hover{
+        text-decoration: none;
+    }
+
+    a{
+        color: rgb(61, 59, 59);
+    }
+
+    .active-video-link{
+        color: rgb(206, 202, 196);
+    }
+
+    .active-video-link:hover{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+    
+</style>
+<hr class = "featurette-divider">
+<div class="container-fluid">
+    <div>
+        <div class="card p-3">
+            <div class="row">
+                <!-- youtube player -->
+                <div class="col-md-12">
+                    <div class="mx-auto">
+                        <iframe title = "Video" id='player' class="mx-auto" width="100%" height="315"
+                            src="https://www.youtube.com/embed/{{video.video_id}}?modestbranding=1;frameborder="0""
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation"></iframe>
+                    </div>
+                </div>
+        </div>
+
+        <div class="corses-tab mt-30">
+            <ul class="nav nav-justified" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Video Description</a>
+                </li>
+                <li class="nav-item">
+                    <a id="curriculam-tab" data-toggle="tab" href="#curriculam" role="tab" aria-controls="curriculam" aria-selected="false">Lectures</a>
+                </li>
+                <li class="nav-item">
+                    <a id="instructor-tab" data-toggle="tab" href="#instructor" role="tab" aria-controls="instructor" aria-selected="false">Instructor</a>
+                </li>
+            </ul>
+            
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                    <div class="overview-description">
+                        <div class="singel-description pt-40">
+                            <h6>Video Description</h6>
+                            <p>{{video.description}}</p>
+                        </div>
+                    </div> <!-- overview description -->
+                </div>
+                <div class="tab-pane fade" id="curriculam" role="tabpanel" aria-labelledby="curriculam-tab">
+                    <div class="curriculam-cont">
+                        <div class="title">
+                            <h6>{{course.name}} Lectures</h6>
+                        </div>
+                        <div class="accordion" id="accordionExample">
+                            {% is_enrolled request course as enrolled %}
+                            {% for v in videos %}
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <a href="?lecture={{v.serial_number}}">
+                                        <ul>
+                                            <li><i class="fa fa-file-o"></i></li>
+                                            <li><span class="lecture">{{v.serial_number}}</span></li>
+                                            <li><span class="head">{{v}}</span></li>
+                                            <li><span class="time d-none d-md-block"><i class="fa fa-clock-o"></i> <span>{{v.serial_number}}</span></span></li>
+                                        </ul>
+                                    </a>
+                                </div>
+                            </div>
+                            {% endfor %}                                                                                           
+                        </div>
+                    </div> <!-- curriculam cont -->
+                </div>
+                <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="curriculam-tab">
+                    
+                </div>
+            </div> <!-- tab content -->
+        </div>
+    </div> <!-- corses singel left -->
+
+        <!-- course details -->
+</div>
+
+
+</div>
+
+{%endblock%}
+

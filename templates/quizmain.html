@@ -1,0 +1,50 @@
+{% extends "basic.html" %}
+{% load static %}
+
+{% block js %}
+    <script src="/static/courses/js2/quizmain.js" defer></script> 
+{% endblock js %}
+
+{% block title %}
+Quizzes | Mirchal Sir's Tutorials
+{% endblock title %}
+
+{% block body %}
+
+<!-- Modal -->
+<div class="modal fade" id="quizStartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to start?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-body-confirm"></div>
+      <div class="modal-footer">
+        <button type="button" class="main-btn" data-dismiss="modal">No</button>
+        <button type="button" id="start-button" class="main-btn">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class = "container">
+<div class="h2">No Quizzes Available At The Moment.</div>
+<hr>
+{% for obj in object_list %}
+    <button
+        class="main-btn btn-link modal-button"
+        data-pk="{{obj.pk}}"
+        data-quiz="{{obj.name}}"
+        data-questions="{{obj.number_of_questions}}"
+        data-difficulty="{{obj.difficluty}}"
+        data-time="{{obj.time}}"
+        data-pass = "{{obj.required_score_to_pass}}"
+        data-toggle="modal"
+        data-target="#quizStartModal">
+        {{obj.name}}
+    </button><br><br>
+{% endfor %}
+</div>
+{% endblock body %}

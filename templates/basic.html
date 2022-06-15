@@ -1,0 +1,380 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+   
+    <!--====== Required meta tags ======-->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="referrer" content="no-referrer-when-downgrade"> 
+    <!--====== Title ======-->
+    <title>{%block title%} {% endblock %}</title>
+    
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="/static/courses/images2/favicon.png" type="image/png">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="/static/courses/css2/slick.css">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="/static/courses/css2/animate.css">
+    
+    <!--====== Nice Select css ======-->
+    <link rel="stylesheet" href="/static/courses/css2/nice-select.css">
+    
+    <!--====== Nice Number css ======-->
+    <link rel="stylesheet" href="/static/courses/css2/jquery.nice-number.min.css">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="/static/courses/css2/magnific-popup.css">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="/static/courses/css2/bootstrap.min.css">
+    
+    <!--====== Fontawesome css ======-->
+    <link rel="stylesheet" href="/static/courses/css2/font-awesome.min.css">
+    
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="/static/courses/css2/default.css">
+    
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="/static/courses/css2/style.css">
+    
+    <!--====== Responsive css ======-->
+    <link rel="stylesheet" href="/static/courses/css2/responsive.css">
+
+    {% block css %}{% endblock css %}
+
+    <style>
+        .active-video{
+            background-color: rgb(78, 79, 80);
+            color: antiquewhite;
+        }
+    </style>
+  
+</head>
+
+
+<body>
+   
+    <!--====== PRELOADER PART START ======-->
+    
+    <div class="preloader">
+        <div class="loader rubix-cube">
+            <div class="layer layer-1"></div>
+            <div class="layer layer-2"></div>
+            <div class="layer layer-3 color-1"></div>
+            <div class="layer layer-4"></div>
+            <div class="layer layer-5"></div>
+            <div class="layer layer-6"></div>
+            <div class="layer layer-7"></div>
+            <div class="layer layer-8"></div>
+        </div>
+    </div>
+    
+    <!--====== PRELOADER PART START ======-->
+    
+    <!--====== HEADER PART START ======-->
+    
+    <header id="header-part">
+       
+        <div class="header-top d-none d-lg-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="header-contact text-lg-left text-center">
+                            <ul>
+                                <li><img src="/static/courses/images2/all-icon/map.png" alt="icon"><span>New Colony Sopore</span></li>
+                                <li><img src="/static/courses/images2/all-icon/email.png" alt="icon"><span>mirchalsirstutorials@gmail.com</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="header-opening-time text-lg-right text-center">
+                            <p>Brace Yourself Up To Meet Excellence</p>
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header top -->
+        
+        <div class="header-logo-support pt-30 pb-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="logo">
+                            <a href="/">
+                                <img src="/static/courses/images2/logomir.svg" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <div class="support-button float-right d-none d-md-block">
+                            <div class="support float-left">
+                                <div class="icon">
+                                    <img src="/static/courses/images2/all-icon/support.png" alt="icon">
+                                </div>
+                                <div class="cont">
+                                    <p>Need Help? call us free</p>
+                                    <span>9149468735</span>
+                                </div>
+                            </div>
+                            {% if request.user.is_authenticated %}
+                            <div class="button float-left">
+                                <a href="/my-courses" class="main-btn">My Courses</a>
+                            </div>
+                            {% else %}
+                            <div class="button float-left">
+                                <a href="/allcourses" class="main-btn">All Courses</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- header logo support -->
+        
+        <div class="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-9 col-8">
+                        <nav class="navbar navbar-expand-lg">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item">
+                                        <a class="active" href="/">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/about">About us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/allcourses">Courses</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="/allcourses">All Courses</a></li>
+                                            <li><a href="/assignments">Assignments</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/quizzes">Quizzes</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/teachers">Our teachers</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/blog">Blog</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/contact">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav> <!-- nav -->
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-4">
+                        <div class="right-icon text-right">
+                            <ul>
+                                <li><a href="#" id="search"><i class="fa fa-search"></i></a></li>
+                                {% if request.user.is_authenticated %}
+                                <li><a href="/profile"><i class="fa fa-user"></i></a></li>
+                                {% else %}
+                                <li><a href="/login"><i class="fa fa-user"></i></a></li>
+                                {% endif %}
+                            </ul>
+                        </div> <!-- right icon -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div>
+        
+    </header>
+    
+    <!--====== HEADER PART ENDS ======-->
+   
+    <!--====== SEARCH BOX PART START ======-->
+    
+    <div class="search-box">
+        <div class="serach-form">
+            <div class="closebtn">
+                <span></span>
+                <span></span>
+            </div>
+            <form action="/search">
+                <input name = "query" type="text" placeholder="Search by course name, instructor or learnings.">
+                <button type = "submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div> <!-- serach form -->
+    </div>
+    <!--====== SEARCH BOX PART ENDS ======-->
+{% block body %}{% endblock body %}
+<!--====== FOOTER PART START ======-->
+    
+<footer id="footer-part">
+    <div class="footer-top pt-40 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-about mt-40">
+                        <div class="logo">
+                            <a href="/"><img src="/static/courses/images2/whitelogo.svg" alt="Logo"></a>
+                        </div>
+                        <p>An initiative taken in view that our students, in every lockdown or turmoil, are forced to subscribe and buy heavy online programs and courses. We want to make it affordable</p>
+                        <ul class="mt-20">
+                            <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div> <!-- footer about -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer-link mt-40">
+                        <div class="footer-title pb-25">
+                            <h6>Sitemap</h6>
+                        </div>
+                        <ul>
+                            <li><a href="/"><i class="fa fa-angle-right"></i>Home</a></li>
+                            <li><a href="/about"><i class="fa fa-angle-right"></i>About us</a></li>
+                            <li><a href="/allcourses"><i class="fa fa-angle-right"></i>Courses</a></li>
+                            <li><a href="/blog"><i class="fa fa-angle-right"></i>Blog</a></li>
+                            <li><a href="/contact"><i class="fa fa-angle-right"></i>Contact</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="/teachers"><i class="fa fa-angle-right"></i>Teachers</a></li>
+                            <li><a href="/my-courses"><i class="fa fa-angle-right"></i>My Courses</a></li>
+                            <li><a href="/teachers"><i class="fa fa-angle-right"></i>Teachers</a></li>
+                            {% comment %} <li><a href="#"><i class="fa fa-angle-right"></i>Support</a></li>
+                            <li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact</a></li> {% endcomment %}
+                        </ul>
+                    </div> <!-- footer link -->
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="footer-link support mt-40">
+                        <div class="footer-title pb-25">
+                            <h6>Support</h6>
+                        </div>
+                        <ul>
+                            <li><a href="/faqs"><i class="fa fa-angle-right"></i>FAQS</a></li>
+                            <li><a href="/blog/privacy"><i class="fa fa-angle-right"></i>Privacy</a></li>
+                            <li><a href="/blog/policy"><i class="fa fa-angle-right"></i>Refund Policy</a></li>
+                            <li><a href="tel:9149468735"><i class="fa fa-angle-right"></i>Call</a></li>
+                            {% comment %} <li><a href="#"><i class="fa fa-angle-right"></i></a></li> {% endcomment %}
+                        </ul>
+                    </div> <!-- support -->
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-address mt-40">
+                        <div class="footer-title pb-25">
+                            <h6>Contact Us</h6>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa fa-home"></i>
+                                </div>
+                                <div class="cont">
+                                    <p>New Colony Sopore</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div class="cont">
+                                    <p>+91 91494 68735</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="icon">
+                                    <i class="fa fa-envelope-o"></i>
+                                </div>
+                                <div class="cont">
+                                    <p>info@mirchalsirstutorials.com</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div> <!-- footer address -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </div> <!-- footer top -->
+    
+    <div class="footer-copyright pt-10 pb-25">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="copyright text-md-left text-center pt-15">
+			    <p><a target="_blank" href="https://instagram.com/mu.saibaltaf/"> Developed By Musaib Altaf&nbsp; </a><a target = "_blank" href = "https://instagram.com/shouryagarg1"> & Shourya Garg</a> </p>                    </div> </div>
+                <div class="col-md-4">
+                    <div class="copyright text-md-right text-center pt-15">
+                       
+                    </div>
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </div> <!-- footer copyright -->
+</footer>
+
+<!--====== FOOTER PART ENDS ======-->
+
+<!--====== jquery js ======-->
+<script src="/static/courses/js2/vendor/modernizr-3.6.0.min.js"></script>
+<script src="/static/courses/js2/vendor/jquery-1.12.4.min.js"></script>
+
+<!--====== Bootstrap js ======-->
+<script src="/static/courses/js2/bootstrap.min.js"></script>
+
+<!--====== Slick js ======-->
+<script src="/static/courses/js2/slick.min.js"></script>
+
+<!--====== Magnific Popup js ======-->
+<script src="/static/courses/js2/jquery.magnific-popup.min.js"></script>
+
+<!--====== Counter Up js ======-->
+<script src="/static/courses/js2/waypoints.min.js"></script>
+<script src="/static/courses/js2/jquery.counterup.min.js"></script>
+
+<!--====== Nice Select js ======-->
+<script src="/static/courses/js2/jquery.nice-select.min.js"></script>
+
+<!--====== Nice Number js ======-->
+<script src="/static/courses/js2/jquery.nice-number.min.js"></script>
+
+<!--====== Count Down js ======-->
+<script src="/static/courses/js2/jquery.countdown.min.js"></script>
+
+<!--====== Validator js ======-->
+<script src="/static/courses/js2/validator.min.js"></script>
+
+<!--====== Ajax Contact js ======-->
+<script src="/static/courses/js2/ajax-contact.js"></script>
+
+<!--====== Main js ======-->
+<script src="/static/courses/js2/main.js"></script>
+
+<!--====== Map js ======-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC3Ip9iVC0nIxC6V14CKLQ1HZNF_65qEQ"></script>
+<script src="/static/courses/js2/map-script.js"></script>
+{% block js %}{% endblock js %}
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/62000b37b9e4e21181bdbaa6/1fr82nkpo';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends "basic.html" %}
+{% load static %}
+{% block title %}
+Assignments | Mirchal Sir's Tutorials
+{% endblock title %}
+{% block body %}
+<div class = "container my-2">
+  {% for a in assignments %}
+  <div class = "col-md-6">
+    <button class = "main-btn"><a style = "color: white;" href = "/assignments/{{a.unique_name}}">{{a.unique_name}}</a></button>
+    <p style = "color: #07294d">Course: {{a.course}}
+    <p style = "color: #07294d">Topic: {{a.topic}}
+  </div>
+  <hr>
+  {% endfor %}
+</div>
+</div>
+{% endblock body %}

@@ -1,0 +1,105 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %}
+Frequently Asked Questions
+{% endblock title %}
+{% block css %}
+<style>
+h3 {
+    font-weight: 600;
+    font-size: 2 rem;
+    color: #07294d;
+    text-transform: uppercase;
+}
+.accordion-section .panel-default > .panel-heading {
+    border: 0;
+    border-radius:7px;
+    background: #ffc600;
+    padding: 0;
+</style>
+{% endblock css %}
+{% block body %}
+<section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
+    <div class="container">
+        <h3 class = "my-4">Frequently Asked Questions </h3>
+        <hr>
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="panel panel-default">
+            <div class="panel-heading p-3 mb-3" role="tab" id="heading0">
+              <h5 class="panel-title">
+                <a style = "color: #07294d;" class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse0" aria-expanded="true" aria-controls="collapse0">
+                  Who started Mirchal Sir's Tutorials
+                </a>
+              </h5>
+            </div>
+            <div id="collapse0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading0">
+              <div class="panel-body px-3 mb-4">
+                <p> <strong>Sir Mudassir Mirchal</strong>, who himself is a lecturer in Zoology at SRM Welkin, Sopore. He is an author and a public speaker also. You can visit his profile by clicking the <a target = "_blank" href = "https://facebook.com/mudassir.mirchal"> link </a> or contact him on mudassir@mirchalsirstutorials.com </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="panel panel-default">
+            <div class="panel-heading p-3 mb-3" role="tab" id="heading1">
+              <h5 class="panel-title">
+                <a style = "color: #07294d;" class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                  What are the features of the website/app?
+                </a>
+              </h5>
+            </div>
+            <div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+              <div class="panel-body px-3 mb-4">
+                <p>Mirchal Sir's Tutorials provides the features of e-learning i.e buying our online courses at a very genuine price, attending our regularly conducted quizzes and accessing the assignments we upload, so that  student can excel in his life and create a better future for him. </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading p-3 mb-3" role="tab" id="heading2">
+              <h5 class="panel-title">
+                <a style = "color: #07294d;" class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                  When are the results of the quizzes declared?
+                </a>
+              </h4>
+            </div>
+            <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+              <div class="panel-body px-3 mb-4">
+                <p>The results of the quizzes are shown once you submit the quiz.</p>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel-default">
+            <div class="panel-heading p-3 mb-3" role="tab" id="heading3">
+              <h5 class="panel-title">
+                <a style = "color: #07294d;" class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                 How can one contact the administration of the app?
+                </a>
+              </h5>
+            </div>
+            <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+              <div class="panel-body px-3 mb-4">
+                <p>You can either go to the contact page and fill the contact form there or mail/call us on the addresses provided by us.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading p-3 mb-3" role="tab" id="heading4">
+              <h5 class="panel-title">
+                <a style = "color: #07294d;" class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                  Which classes would be taught on the platform?
+                </a>
+              </h5>
+            </div>
+            <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+              <div class="panel-body px-3 mb-4">
+                <p>As of now, we're providing courses for X, XI and XII classes. We look forward to expanding our site and provide courses for different entrance examinations. </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    
+    </div>
+  </section>
+{% endblock body %}

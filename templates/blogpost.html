@@ -1,0 +1,78 @@
+{% extends 'basic.html' %}
+{% block title %}{{post.title}}{% endblock title %}{{post.title}}
+{% load static %}
+{% block body %}
+{% load humanize %}
+{% load extras %}
+    <!--====== PAGE BANNER PART START ======-->
+    
+    <section id="page-banner" class="pt-105 pb-130 bg_cover" data-overlay="8" style="background-image: url(/static/courses/images2/page-banner-4.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-banner-cont">
+                        <h2>{{post.title}}</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                                <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{post.title}}</li>
+                            </ol>
+                        </nav>
+                    </div>  <!-- page banner cont -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== PAGE BANNER PART ENDS ======-->
+   
+    <!--====== BLOG PART START ======-->
+    
+    <section id="blog-singel" class="pt-90 pb-120 gray-bg">
+        <div class="container">
+           <div class="row">
+              <div class="col-lg-8">
+                  <div class="blog-details mt-30">
+                      <div class="thum">
+                          <img src="/media/{{post.image}}" alt="Blog Details">
+                      </div>
+                      <div class="cont">
+                          <h3>{{post.title}}</h3>
+                          <ul>
+                               <li><a href="#"><i class="fa fa-calendar"></i>{{post.timeStamp}}</a></li>
+                               <li><a href="#"><i class="fa fa-user"></i>{{post.author}}</a></li>
+                           </ul>
+                           <p>{{post.content|linebreaks}} 
+                           </p>
+
+                      </div> <!-- cont -->
+                  </div> <!-- blog details -->
+              </div>
+               <div class="col-lg-4">
+                   <div class="saidbar">
+                       <div class="row">
+                           <div class="col-lg-12 col-md-6">
+                               <div class="categories mt-30">
+                                <h4>Categories We Talk About</h4>
+                                <ul>
+                                    <li>Education</li>
+                                    <li>Social Analysis</li>
+                                    <li>Political Analysis</li>
+                                    <li>Career Guidance</li>
+                                    <li>Social Issues</li>
+                                    <li>Portal Updates</li>
+                                </ul>
+                               </div>
+                           </div> <!-- categories -->
+                               </div> <!-- saidbar post -->
+                           </div>
+                       </div> <!-- row -->
+                   </div> <!-- saidbar -->
+               </div>
+           </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== BLOG PART ENDS ======-->
+    {% endblock body %}

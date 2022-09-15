@@ -18,7 +18,7 @@ KEY_SECRET = str(os.getenv('KEY_SECRET'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 #ALLOWED_HOSTS = ['mirchalsirstutorials.herokuapp.com', 'www.mirchalsirstutorials.herokuapp.com', '206.189.128.10', 'mirchalsirstutorials.com', 'www.mirchalsirstutorials.com']
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]', 'https://mirchalsirsapp.herokuapp.com/', 'www.https://mirchalsirsapp.herokuapp.com/', 'mirchalsirsapp.herokuapp.com']
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]', '139.59.0.194' 'https://mirchalsirsapp.herokuapp.com/', 'www.https://mirchalsirsapp.herokuapp.com/', 'mirchalsirsapp.herokuapp.com']
 #ALLOWED_HOSTS = []
 
 

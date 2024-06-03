@@ -37,7 +37,7 @@ six==1.15.0
 sqlparse==0.4.1
 toml==0.10.2
 twilio==6.51.1
-urllib3==1.26.2
+urllib3==2.2.1
 virtualenv==20.2.2
 webencodings==0.5.1
 whitenoise==5.1.0

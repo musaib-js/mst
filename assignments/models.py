@@ -1,4 +1,3 @@
-import imp
 from django.db import models
 import assignments
 from courses.models import Course

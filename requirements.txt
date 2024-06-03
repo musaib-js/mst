@@ -31,7 +31,7 @@ PyPDF2==1.26.0
 python-bidi==0.4.2
 pytz==2020.4
 razorpay==1.2.0
-reportlab==3.5.56
+reportlab==4.2.0
 requests==2.25.1
 six==1.15.0
 sqlparse==0.4.1
